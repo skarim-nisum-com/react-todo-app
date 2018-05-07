@@ -5,7 +5,7 @@ class CreateTodo extends Component {
     render() {
         return (
             <form onSubmit={this.handleCreate.bind(this)}>
-                <input type="text" placeholder="What you want to do?" ref="createInput" />
+                <input type="text" placeholder="task" ref="createInput" />
                 <button>Create</button>
             </form>
         );
@@ -13,9 +13,10 @@ class CreateTodo extends Component {
 
     handleCreate(event){
         event.preventDefault();
-        console.log(this.refs.createInput.value);
+        //console.log(this.refs.createInput.value);
+        //console.log(this.props.createTask);
         this.props.createTask(this.refs.createInput.value);
-        this.refs.createInput = '';
+        this.refs.createInput.value = '';
     }
 }
 

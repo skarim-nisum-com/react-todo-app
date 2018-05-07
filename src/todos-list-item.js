@@ -5,14 +5,9 @@ class TodosListItem extends Component {
     super(props);
 
     this.state = {
+        task: 'test',
         isEditing: false
     }
-  }
-
-  renderTaskSection(){
-    return{
-        
-    };
   }
 
   renderActionsSection(){
@@ -32,10 +27,19 @@ class TodosListItem extends Component {
       );
   }
 
+  renderTaskSection() {
+    const { task, isCompleted} = this.props;
+    return (
+        <tr>
+            <td>{task}</td>
+        </tr>
+    );
+  }
+
   render() {
     return (
             <tr>
-                <td>{this.props.task}</td>
+                {this.renderTaskSection()}
                 {this.renderActionsSection()}
             </tr>
     );

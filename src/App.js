@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CreateTodo from './create-todo';
 import TodosList from './todos-list';
 
 const todos =
-  {
+  [{
     task: 'do h.w',
     isCompleted: false
-  };
+  }];
 
 class App extends Component {
   
@@ -29,13 +28,14 @@ class App extends Component {
     );
   }
 
-  CreateTask() {
+  createTask(task){
     this.state.todos.push({
-      task, //task: task
-      isCompleted: false
+      task: task,
+      isCompleted:false
     });
-    this.setState({ todos: this.state.todos }); //this will re-render the page
+    this.setState({ todos: this.state.todos });
   }
+  
 }
 
 export default App;
